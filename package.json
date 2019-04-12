@@ -1,0 +1,20 @@
+{
+  "name": "shallwi-site-parcel",
+  "version": "1.0.0",
+  "description": "A static landing page for shallwi.co built with HTML, CSS, JS, and Parcel.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcmdr/shallwi-site-parcel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bcmdr/shallwi-site-parcel/issues"
+  },
+  "homepage": "https://github.com/bcmdr/shallwi-site-parcel#readme"
+}

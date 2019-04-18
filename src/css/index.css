@@ -7,8 +7,9 @@
 }
 
 :root {
+    --main-text-black: #111111;
     --main-bg-blue: #00A9FD;
-    --hero-h2-yellow: #FFFEE1;
+    --hero-yellow: #FFFEE1;
     --display-font-family: 'Passion One', sans-serif;
     --display-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
     /* Scale font size for any screen size. https://css-tricks.com/books/volume-i/scale-typography-screen-size/*/
@@ -23,9 +24,19 @@ body {
     font-family: sans-serif;
 }
 
-h1, nav li, .hero h2, .hero h2+p, .hero button {
+h1, .hero h2+p {
     font-family: var(--display-font-family);
     text-shadow: var(--display-shadow);
+}
+
+header, main, nav, footer {
+    z-index: -10;
+}
+
+button {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
 }
 
 /* -- Header -- */
@@ -56,7 +67,7 @@ header .brand, header h1, header nav, nav li {
 
 /* -- Top Nav -- */
 
-header brand {
+header .brand {
     margin-right: 1rem;
 }
 
@@ -68,6 +79,8 @@ header nav>ul {
 
 header nav li {
     margin-right: 0;
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-shadow);
 }
 
 header nav li+li::before {
@@ -78,12 +91,14 @@ header nav li+li::before {
 /* -- Hero -- */
 
 .hero {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
+    min-height: 75vh;
     background: var(--main-bg-blue);
     padding: 0.5rem 1rem;
+    z-index: -10;
 }
 
 .hero__content {
@@ -93,15 +108,50 @@ header nav li+li::before {
 .hero h2 {
     font-size: 2.4rem;
     line-height: 2.4rem;
-    color: var(--hero-h2-yellow);
+    color: var(--hero-yellow);
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-shadow);
+    margin: 0;
+    margin-bottom: 0.3rem;
 }
 
 .hero p {
     font-size: 1.4rem;
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-shadow);
     line-height: 1.4rem;
+    color: white;
+    margin: 0;
+    margin-bottom: 1rem;
+    
+}
+
+.hero button {
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-shadow);
+    box-shadow: var(--display-shadow), inset var(--display-shadow);
+    background: transparent;
+    border: 2px solid white;
     color: white;
 }
 
-.hero h2, .hero h2+p {
-    margin: 0.5rem 0;
+.hero .button--primary {
+    background: white;
+    color: var(--main-text-black);
+    text-shadow: none;
+    box-shadow: var(--display-shadow);
 }
+
+.hero__bg {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: -1;
+}
+
+.hero__bg img {
+    /* calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+    width: calc(150px + (500 - 150) * ((100vw - 300px) / (1600 - 300)));
+    max-width: 500px;
+}
+

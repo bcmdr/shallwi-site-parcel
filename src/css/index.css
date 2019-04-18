@@ -1,7 +1,18 @@
 @import './remedy.css';
 
+/* -- Global -- */
+
 :root {
     --main-bg-blue: #00A9FD;
+    --hero-h2-yellow: #FFFEE1;
+    --display-font-family: 'Passion One', sans-serif;
+    --display-text-shadow: -2px 2px 1px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -9,19 +20,22 @@ body {
     font-family: sans-serif;
 }
 
-header, main, footer {
-    padding: 1rem;
+h1, nav li, .hero h2, .hero h2+p, .hero button {
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-text-shadow);
 }
 
 header {
+    padding: 0.5rem 1rem;
     color: white;
 }
 
 header>h1 {
-    display: inline-block;
+    margin: 0;
+    margin-right: 0.5rem;
 }
 
-header>nav{
+header>h1, header>nav, nav li {
     display: inline-block;
 }
 
@@ -31,6 +45,34 @@ nav>ul {
     margin: 0;
 }
 
-nav li {
-    display: inline-block;
+ main {
+    padding: 0.5rem 1rem;
+ }
+
+/* -- Hero -- */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+}
+
+.hero__content {
+    max-width: 35em;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: var(--hero-h2-yellow);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: white;
+}
+
+.hero h2, .hero h2+p {
+    margin: 0.5rem 0;
 }

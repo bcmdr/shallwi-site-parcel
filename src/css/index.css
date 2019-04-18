@@ -1,22 +1,25 @@
-@import './remedy.css';
-
 /* -- Global -- */
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 :root {
     --main-bg-blue: #00A9FD;
     --hero-h2-yellow: #FFFEE1;
     --display-font-family: 'Passion One', sans-serif;
-    --display-text-shadow: -2px 2px 1px rgba(0, 0, 0, 0.25);
-    font-size: 24px;
-}
-
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    --display-text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+    /* Scale font size for any screen size. https://css-tricks.com/books/volume-i/scale-typography-screen-size/*/
+    /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+    font-size: calc(24px + (32 - 24) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
 }
 
 body {
-    background: var(--main-bg-blue);
+    margin: 0;
+    color: white;
     font-family: sans-serif;
 }
 
@@ -26,18 +29,22 @@ h1, nav li, .hero h2, .hero h2+p, .hero button {
 }
 
 header {
-    padding: 0.5rem 1rem;
+    background: var(--main-bg-blue);
+    padding: 0.75rem 1rem;
     color: white;
 }
 
-header>h1 {
+header h1 {
     margin: 0;
     margin-right: 0.5rem;
+    font-size: 1.5rem;
 }
 
-header>h1, header>nav, nav li {
+header .brand, header h1, header nav, nav li {
     display: inline-block;
 }
+
+/* -- Nav -- */
 
 nav>ul {
     list-style: none;
@@ -45,9 +52,14 @@ nav>ul {
     margin: 0;
 }
 
- main {
-    padding: 0.5rem 1rem;
- }
+nav li {
+    margin-right: 0;
+}
+
+nav li+li::before {
+    content: ' / '
+}
+
 
 /* -- Hero -- */
 
@@ -55,21 +67,24 @@ nav>ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 75vh;
+    min-height: 50vh;
+    background: var(--main-bg-blue);
+    padding: 0.5rem 1rem;
 }
 
 .hero__content {
-    max-width: 35em;
+    max-width: 35rem;
 }
 
 .hero h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
     color: var(--hero-h2-yellow);
 }
 
 .hero p {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
     color: white;
 }
 

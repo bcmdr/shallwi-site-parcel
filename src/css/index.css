@@ -53,8 +53,14 @@ header h1 {
     font-size: 1.5rem;
 }
 
-header .brand, header h1, header nav, nav li {
+header .brand, header h1, header nav {
     display: inline-block;
+}
+
+
+header .brand {
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .brand__logo {
@@ -67,10 +73,6 @@ header .brand, header h1, header nav, nav li {
 
 /* -- Top Nav -- */
 
-header .brand {
-    margin-right: 1rem;
-}
-
 header nav>ul {
     list-style: none;
     padding: 0;
@@ -78,6 +80,7 @@ header nav>ul {
 }
 
 header nav li {
+    display: inline-block;
     margin-right: 0;
     font-family: var(--display-font-family);
     text-shadow: var(--display-shadow);
@@ -122,11 +125,13 @@ header nav li+li::before {
     line-height: 1.4rem;
     color: white;
     margin: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     
 }
 
 .hero button {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     font-family: var(--display-font-family);
     text-shadow: var(--display-shadow);
     box-shadow: var(--display-shadow), inset var(--display-shadow);

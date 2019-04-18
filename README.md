@@ -16,3 +16,4 @@ parcel index.html
 ### Typography
 - [Passion One – Headings Font](https://fonts.google.com/specimen/Passion+One)
 - [Open Source – Body Font](https://fonts.google.com/specimen/Open+Sans)
+- [Scale Typography for Any Screen Size](https://css-tricks.com/books/volume-i/scale-typography-screen-size/)

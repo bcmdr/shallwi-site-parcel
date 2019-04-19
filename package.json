@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/bcmdr/shallwi-site-parcel/issues"
   },
-  "homepage": "https://github.com/bcmdr/shallwi-site-parcel#readme"
+  "homepage": "https://github.com/bcmdr/shallwi-site-parcel#readme",
+  "dependencies": {
+    "parcel": "^1.12.3"
+  }
 }

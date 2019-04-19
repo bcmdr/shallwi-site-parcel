@@ -124,7 +124,7 @@ header nav .current {
     min-height: 100vh;
     padding-right: 1rem;
     padding-left: 1rem;
-    padding-top: 7rem;
+    padding-top: 5rem;
     padding-bottom: 1rem;
     background-color: var(--main-bg-blue);
     /* https://www.heropatterns.com/ charlie brown pattern */
@@ -191,6 +191,10 @@ header nav .current {
 /* -- Mobile -- */
 
 @media screen and (max-width: 650px) {
+    .hero {
+        padding-top: 7rem;
+    }
+
     .hero__bg img {
         display: none;
     }

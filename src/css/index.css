@@ -139,6 +139,7 @@ header nav .current {
 .hero h2 {
     font-size: 2.4rem;
     line-height: 2.4rem;
+    letter-spacing: 0.025rem;
     color: var(--hero-yellow);
     font-family: var(--display-font-family);
     text-shadow: var(--display-shadow);

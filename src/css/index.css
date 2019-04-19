@@ -10,7 +10,7 @@
 
 :root {
     --main-text-black: #111111;
-    --main-bg-blue: #00A9FD;
+    --main-bg-blue: rgb(3, 122, 190);
     --hero-yellow: #FFFEE1;
     --display-font-family: 'Passion One', sans-serif;
     --display-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);

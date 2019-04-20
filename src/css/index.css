@@ -39,13 +39,50 @@ button {
     cursor: pointer;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes slideLeftRight {
+    0% {
+        transform: translate(-150%);
+    }
+    
+    100% {
+        transform: translate(0%);
+    }
+}
+
+@keyframes slideTopBottom {
+    0% {
+        transform: translate(0%, -150%);
+    }
+    
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+
+@keyframes slideRightLeft {
+    0% {
+        transform: translate(150%);
+    }
+    
+    100% {
+        transform: translate(0%);
+    }
+}
+
 /* -- Header -- */
 
 header {
     position: absolute;
-    /* background-color: var(--primary-bg-color); */
-    /* https://www.heropatterns.com/ charlie brown pattern */
-    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23d2f0ff' fill-opacity='0.36'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
     top: 0.75rem;
     left: 1rem;
     color: white;
@@ -68,6 +105,7 @@ header nav {
 header .brand {
     margin-right: 1rem;
     margin-bottom: 0.5rem;
+    animation: slideLeftRight 2s;
 }
 
 header .brand__logo {
@@ -76,6 +114,10 @@ header .brand__logo {
     display: inline-block;
     vertical-align: bottom;
     filter: drop-shadow(var(--display-shadow));
+}
+
+header nav {
+    animation: slideTopBottom 2s ease;
 }
 
 header nav>ul {
@@ -89,10 +131,6 @@ header nav li {
     margin-right: 0;
     font-family: var(--display-font-family);
     text-shadow: var(--display-shadow);
-}
-
-header nav li+li::before {
-    /* content: ' / ' */
 }
 
 header nav a {
@@ -128,20 +166,19 @@ header nav .current {
     padding-top: 5rem;
     padding-bottom: 1rem;
     background-color: var(--primary-bg-color);
-    background: repeating-linear-gradient(
-        -45deg,
+    background: repeating-linear-gradient(-45deg,
         var(--primary-bg-color),
         var(--primary-bg-color) 100px,
         var(--secondary-bg-color) 100px,
-        var(--secondary-bg-color) 200px
-    )
-    /* https://www.heropatterns.com/ charlie brown pattern */
-    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23d2f0ff' fill-opacity='0.15'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
+        var(--secondary-bg-color) 200px);
+    background-size: cover;
+    animation: moveBackground 5s linear infinite;
 }
 
 .hero__content {
     max-width: 35rem;
     z-index: 2;
+    animation: fadeIn 2s;
 }
 
 .hero h2 {
@@ -193,6 +230,7 @@ header nav .current {
     /* calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
     width: calc(150px + (500 - 150) * ((100vw - 300px) / (1600 - 300)));
     max-width: 500px;
+    animation: slideRightLeft 2s;
 }
 
 /* -- Mobile -- */

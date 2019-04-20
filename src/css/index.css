@@ -157,6 +157,7 @@ header nav .current {
 .hero {
     position: relative;
     z-index: 1;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,8 +172,6 @@ header nav .current {
         var(--primary-bg-color) 100px,
         var(--secondary-bg-color) 100px,
         var(--secondary-bg-color) 200px);
-    background-size: cover;
-    animation: moveBackground 5s linear infinite;
 }
 
 .hero__content {
@@ -224,13 +223,13 @@ header nav .current {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
+    animation: slideRightLeft 2s;
 }
 
 .hero__bg img {
     /* calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
     width: calc(150px + (500 - 150) * ((100vw - 300px) / (1600 - 300)));
     max-width: 500px;
-    animation: slideRightLeft 2s;
 }
 
 /* -- Mobile -- */

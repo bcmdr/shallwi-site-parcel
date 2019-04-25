@@ -12,6 +12,8 @@
     --main-text-black: #111111;
     --primary-bg-color: rgb(0, 132, 209);
     --secondary-bg-color: rgb(0, 162, 255);
+    --pitch-primary-bg-color: rgb(209, 0, 105);
+    --pitch-secondary-bg-color: rgb(255, 0, 106);
     --hero-yellow: #FFFEE1;
     --display-font-family: 'Passion One', sans-serif;
     --display-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -23,13 +25,13 @@
 
 body {
     margin: 0;
-    color: white;
-    font-family: sans-serif;
-}
-
-h1 {
     font-family: var(--display-font-family);
-    text-shadow: var(--display-shadow);
+    background-color: var(--primary-bg-color);
+    background-image: repeating-linear-gradient(-45deg,
+        var(--primary-bg-color),
+        var(--primary-bg-color) 100px,
+        var(--secondary-bg-color) 100px,
+        var(--secondary-bg-color) 200px);
 }
 
 button {
@@ -37,6 +39,10 @@ button {
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
     cursor: pointer;
+}
+
+main section {
+   padding: 1rem 1rem;
 }
 
 @keyframes fadeIn {
@@ -83,8 +89,9 @@ button {
 
 header {
     position: absolute;
-    top: 0.75rem;
-    left: 1rem;
+    top: 0;
+    left: 0;
+    padding: 0.75rem 1rem;
     color: white;
     z-index: 3;
 }
@@ -93,6 +100,8 @@ header h1 {
     margin: 0;
     margin-right: 0.5rem;
     font-size: 1.5rem;
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-shadow);
 }
 
 header .brand,
@@ -155,6 +164,9 @@ header nav .current {
 /* -- Hero -- */
 
 .hero {
+    color: white;
+    font-family: var(--display-font-family);
+    text-shadow: var(--display-shadow);
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -162,16 +174,14 @@ header nav .current {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding-right: 1rem;
-    padding-left: 1rem;
     padding-top: 5rem;
     padding-bottom: 1rem;
-    background-color: var(--primary-bg-color);
-    background: repeating-linear-gradient(-45deg,
+    /* background-color: var(--primary-bg-color);
+    background-image: repeating-linear-gradient(-45deg,
         var(--primary-bg-color),
         var(--primary-bg-color) 100px,
         var(--secondary-bg-color) 100px,
-        var(--secondary-bg-color) 200px);
+        var(--secondary-bg-color) 200px); */
 }
 
 .hero__content {
@@ -232,9 +242,9 @@ header nav .current {
     max-width: 500px;
 }
 
-/* -- Mobile -- */
+/* -- Hero Mobile -- */
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
     .hero {
         padding-top: 7rem;
     }
@@ -242,4 +252,39 @@ header nav .current {
     .hero__bg img {
         display: none;
     }
+}
+
+/* -- Pitch -- */
+
+.pitch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.25);
+    /* background-color: var(--pitch-primary-bg-color);
+    background: repeating-linear-gradient(45deg,
+        var(--pitch-primary-bg-color),
+        var(--pitch-primary-bg-color) 100px,
+        var(--pitch-secondary-bg-color) 100px,
+        var(--pitch-secondary-bg-color) 200px); */
+}
+
+.pitch__content {
+    padding: 0.5rem 1rem;
+    color: white;
+    text-shadow: var(--display-shadow);
+    max-width: 35rem;
+}
+
+
+.pitch h2, .pitch h3 {
+    color: var(--hero-yellow);
+}
+
+.pitch h3 {
+    margin-bottom: 0.5rem;
+}
+
+.pitch p {
+    margin-top: 0.5rem;
 }

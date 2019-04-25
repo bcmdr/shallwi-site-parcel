@@ -34,8 +34,9 @@ body {
         var(--secondary-bg-color) 200px);
 }
 
-h2 {
+h2, h3 {
     letter-spacing: 0.025rem;
+    font-weight: normal;
 }
 
 button {

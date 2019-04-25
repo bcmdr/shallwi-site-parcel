@@ -34,6 +34,10 @@ body {
         var(--secondary-bg-color) 200px);
 }
 
+h2 {
+    letter-spacing: 0.025rem;
+}
+
 button {
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
@@ -194,7 +198,6 @@ header nav .current {
     font-weight: normal;
     font-size: 2.4rem;
     line-height: 2.4rem;
-    letter-spacing: 0.025rem;
     color: var(--hero-yellow);
     font-family: var(--display-font-family);
     text-shadow: var(--display-shadow);

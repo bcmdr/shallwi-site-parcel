@@ -26,12 +26,12 @@
 body {
     margin: 0;
     font-family: var(--display-font-family);
-    background-color: var(--primary-bg-color);
-    background-image: repeating-linear-gradient(-45deg,
-        var(--primary-bg-color),
-        var(--primary-bg-color) 100px,
+    background-color: var(--secondary-bg-color);
+    background-image: repeating-linear-gradient(225deg,
+        var(--secondary-bg-color),
         var(--secondary-bg-color) 100px,
-        var(--secondary-bg-color) 200px);
+        var(--primary-bg-color) 100px,
+        var(--primary-bg-color) 200px);
 }
 
 h2, h3 {
@@ -181,12 +181,12 @@ header nav .current {
     min-height: 100vh;
     padding-top: 5rem;
     padding-bottom: 1rem;
-    /* background-color: var(--primary-bg-color);
-    background-image: repeating-linear-gradient(-45deg,
+    /* background-color: var(--secondary-bg-color);
+    background-image: repeating-linear-gradient(-405deg,
         var(--primary-bg-color),
         var(--primary-bg-color) 100px,
         var(--secondary-bg-color) 100px,
-        var(--secondary-bg-color) 200px); */
+        var(--secondary-bg-color) 200px) */
 }
 
 .hero__content {
@@ -260,6 +260,13 @@ header nav .current {
 
 /* -- Pitch -- */
 
+.pitch_before {
+    width: 100%;
+    height: 100%;
+    background: white;
+    filter: blur(0.2rem);
+}
+
 .pitch {
     display: flex;
     align-items: center;
@@ -278,6 +285,55 @@ header nav .current {
     color: white;
     text-shadow: var(--display-shadow);
     max-width: 35rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pitch__content h2 {
+    margin-right: 0.5rem;
+}
+
+.pitch__point {
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+    flex-wrap: wrap;
+    min-width: 10rem;
+}
+
+.pitch__point h3 {
+    display: inline-block;
+    width: 100%;
+    line-height: 2rem;
+}
+
+.pitch__point p {
+    margin-top: 0;
+}
+
+.pitch__point h3:before {
+    color: #111;
+    font-size: 1em;
+    border-radius: 100%;
+    background: white;
+    padding: 0.25rem 0.6rem;
+    display: inline;
+    text-shadow: none;
+    box-shadow: var(--display-shadow);
+    margin-right: 0.5rem;
+}
+
+.pitch__point:nth-child(2) h3:before {
+    content: '1';
+}
+
+.pitch__point:nth-child(3) h3:before {
+    content: '2';
+}
+
+.pitch__point:nth-child(4) h3:before {
+    content: '3';
 }
 
 

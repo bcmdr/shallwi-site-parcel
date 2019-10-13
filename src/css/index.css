@@ -294,10 +294,10 @@ header nav .current {
 }
 
 .pitch__point {
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem;
     margin-bottom: 0.25rem;
     margin-right: 0.25rem;
-    margin-left: 0.25rem;
+    margin-left: 0.25rem; */
     flex-wrap: wrap;
     min-width: 10rem;
 }

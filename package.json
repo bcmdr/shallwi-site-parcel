@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/bcmdr/shallwi-site-parcel#readme",
   "dependencies": {
-    "parcel": "^1.12.3"
+    "parcel": "^2.8.2"
   }
 }
